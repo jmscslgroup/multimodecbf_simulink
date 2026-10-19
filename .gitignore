@@ -1,0 +1,11 @@
+
+*.mat
+*.l
+*.slx.r*
+slprj/
+*.bag
+*.autosave
+*.original
+
+__pycache__/
+venv/

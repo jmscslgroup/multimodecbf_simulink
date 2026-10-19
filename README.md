@@ -43,27 +43,47 @@ The constant values used by the multi-mode CBF are:
 
 In all modes, the CBF command acceleration is calculated as:
 
+
 $$
-u_{\mathrm{cbf}}(x_n) = \frac{1}{\tau}
-\left(k\left(s_n - \left(\tau v_n + d_q^{\min}\right)\right)
-+ \Delta v_n\right)
+u_{\mathrm{cbf}}(x_n)
+= \frac{1}{\tau}
+\left[
+k\left(s_n - \left(\tau v_n + d_q^{\min}\right)\right)
++ \Delta v_n
+\right]
 $$
 
 The command acceleration is then:
+
+
 $$
-u_{\text{cmd}}(x_n) = \min \{ u_{\text{cbf}}(x_n), k_{\text{nom}}(x_n) \}
+u_{\mathrm{cmd}}(x_n)
+= \min\left\{
+u_{\mathrm{cbf}}(x_n),\,
+k_{\mathrm{nom}}(x_n)
+\right\}
 $$
 
 In the third mode, the minimum distance is calculated as:
 
+
 $$
-d_3^{\min}(v_n) =
-\frac{\left(d_1^{\min} - d_2^{\min}\right)
-\exp\left(k_d\left(v_n -
-\frac{v_{\mathrm{slow}} + v_{\mathrm{fast}}}{2}\right)\right)}
-{1 + \exp\left(k_d\left(v_n -
-\frac{v_{\mathrm{slow}} + v_{\mathrm{fast}}}{2}\right)\right)}
-+ d_2^{\min}
+d_3^{\min}(v_n)
+= d_2^{\min}
++ \frac{
+\left(d_1^{\min} - d_2^{\min}\right)
+\exp\left(
+k_d\left(
+v_n - \frac{v_{\mathrm{slow}} + v_{\mathrm{fast}}}{2}
+\right)
+\right)
+}{
+1 + \exp\left(
+k_d\left(
+v_n - \frac{v_{\mathrm{slow}} + v_{\mathrm{fast}}}{2}
+\right)
+\right)
+}
 $$
 
 The mode-transition logic is summarized below. The three operating modes are

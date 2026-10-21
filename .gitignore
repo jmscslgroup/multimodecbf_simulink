@@ -9,3 +9,9 @@ slprj/
 
 __pycache__/
 venv/
+
+build_ros_model.sh
+*.slxc
+*.tgz
+src/
+*ert_rtw/
